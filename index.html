@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="radio" name="filter" id="rbPie">
+    <input type="radio" name="filter" id="rbIceCream">
+    <input type="radio" name="filter" id="rbСheesecake">
+    <input type="radio" name="filter" id="rbSmallCake">
+    <input type="radio" name="filter" id="rbCake">
+    <input type="radio" name="filter" id="rbReset" checked>
+
+    <div class="container">
+        <header><img src="img/header.png" alt=""></header>
+
+        <div class="catalog">
+
+
+            <div class="item veryNiceBox cake">
+                <div class="itemPic"><img src="img/yummy1.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Торт: <b>Прага</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 265 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox cheesecake">
+                <div class="itemPic"><img src="img/yummy2.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Чизкейк: <b>Белый шоколад и матча</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 305 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox cheesecake">
+                <div class="itemPic"><img src="img/yummy3.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Чизкейк: <b>Ягодный</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 450 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox cake">
+                <div class="itemPic"><img src="img/yummy4.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Торт: <b>Муравейник</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 523 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox cheesecake">
+                <div class="itemPic"><img src="img/yummy5.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Чизкейк: <b>Пряний мандарин</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 380 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox pie">
+                <div class="itemPic"><img src="img/yummy6.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Пирог: <b>Польский яблочный</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 298 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox smallCake">
+                <div class="itemPic"><img src="img/yummy7.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Пироженное: <b>Французские слойки</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 600 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox smallCake">
+                <div class="itemPic"><img src="img/yummy8.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Пироженное: <b>Брауни с чёрним шоколаом</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 438 кКал</p>
+                </div>
+            </div>
+            <div class="item veryNiceBox iceCream">
+                <div class="itemPic"><img src="img/yummy9.jpg" alt=""></div>
+                <div class="itemName">
+                    <p>Мороженое: <b>Банановое эскимо</b></p>
+                </div>
+                <hr>
+                <div class="itemDescr">
+                    <p>Калории в порции 348 кКал</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters veryNiceBox">
+            <div class="slider">
+                <p>Калорії у порції</p>
+                <div class="rangeContainer">
+                    <input type="range" min="100" max="1000" value="400" id="range">
+                </div>
+                <label for="range">До 400 кКал</label>
+            </div>
+
+            <div class="filtersRb">
+                <label for="rbPie">Пирог</label>
+                <label for="rbIceCream">Мороженое</label>
+                <label for="rbСheesecake">Чизкейк</label>
+                <label for="rbSmallCake">Пироженное</label>
+                <label for="rbCake">Торт</label>
+                <label for="rbReset">Скинути фільтр</label>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="contacts">
+                <p>Контакти:</p><a href="mailto:tortik@smakota.ua">tortik@smakota.ua</a>
+            </div>
+            <p>© 2021 Smakota</p>
+        </footer>
+    </div>
+</body>
+
+</html>

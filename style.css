@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.item {
+    border: 1px solid rgb(215, 219, 222);
+    border-radius: 5px;
+    background-color: rgb(246, 247, 248);
+}
+.item:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+p,
+label {
+    color: rgb(0, 24, 49);
+}
+.filtersRb label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(213, 218, 222);
+    border-radius: 5px;
+    background-color: rgb(227, 230, 233);
+    padding: 10px;
+    width: 100%;
+    height: 35px;
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: auto 230px;
+    grid-template-rows: 80px minmax(400px, auto) 20px;
+    grid-gap: 15px;
+    grid-template-areas: 
+        "head head"
+        "ctlg filt"
+        "foot foot";
+    min-height: 100vh;
+    padding: 10px;
+}
+header {
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer {
+    grid-area: foot;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .contacts {
+    display: flex;
+    flex-flow: row nowrap;
+}
+footer a {
+    text-decoration: none;
+}
+footer a::before {
+    content: "\2709";
+    color: rgb(0, 24, 49);
+}
+
+
+.catalog {
+    grid-area: ctlg;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+.item {
+    padding: 10px;
+    display: none;
+    grid-template-rows: 110px 1px 1fr;
+    grid-template-columns: 180px 1fr;
+    grid-gap: 10px;
+    grid-template-areas: 
+        "pic   name"
+        "hr    hr"
+        "descr descr";
+}
+.itemPic {
+    grid-area: pic;
+    width: 180px;
+}
+.itemPic img {
+    width:100%;
+}
+.itemName {
+    grid-area: name;
+}
+.item hr {
+    grid-area: hr;
+}
+.itemDescr {
+    grid-area: descr;
+}
+
+
+.filters {
+    grid-area: filt;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 25px;
+    align-items: center;
+    border: 1px solid rgb(215, 219, 222);
+    border-radius: 5px;
+    background-color: rgb(246, 247, 248);
+    padding: 5px;
+}
+.filtersRb {
+    width: 90%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 40px;
+}
+
+
+
+input[type="radio"] {
+    display: none;
+}
+#rbPie:checked ~ .container label[for="rbPie"],
+#rbIceCream:checked ~ .container label[for="rbIceCream"],
+#rbСheesecake:checked ~ .container label[for="rbСheesecake"],
+#rbSmallCake:checked ~ .container label[for="rbSmallCake"],
+#rbCake:checked ~ .container label[for="rbCake"] {
+    background-color: rgb(130, 134, 138);
+    color: whitesmoke;
+}
+
+#rbReset:checked ~ .container .item {
+    display: grid;
+}
+#rbPie:checked ~ .container .pie {
+    display: grid;
+}
+#rbIceCream:checked ~ .container .iceCream {
+    display: grid;
+}
+#rbСheesecake:checked ~ .container .cheesecake {
+    display: grid;
+}
+#rbSmallCake:checked ~ .container .smallCake {
+    display: grid;
+}
+#rbCake:checked ~ .container .cake {
+    display: grid;
+}
+
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+.rangeContainer {
+    width: 100%;
+}
+#range {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: rgb(227, 230, 233);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+#range:hover {
+  opacity: 1;
+}
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; 
+  background: rgb(0, 24, 49);
+  cursor: pointer;
+}
+
+#range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: rgb(0, 24, 49);
+  cursor: pointer;
+}
+
+
+
+
+@media (min-width: 730px) and (max-width: 1200px) {
+    /* tablet */
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px min-content minmax(400px, auto) 30px;
+        grid-template-areas: 
+            "head"
+            "filt"
+            "ctlg"
+            "foot";
+    }
+
+
+    .filters {
+        border: 0;
+        background-color: #fff;
+    }
+    .slider {
+        display: none;
+    }
+    .filtersRb {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 40px;
+    }
+
+    .item {
+        grid-template-rows: min-content  1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "pic"
+            "name";
+    }
+    .item hr,
+    .item .itemDescr {
+        display: none;
+    }
+    .itemPic {
+        grid-area: pic;
+        width: 100%;
+    }
+
+    footer .contacts {
+        flex-flow: column nowrap;
+    }
+}
+
+
+@media (min-width: 375px) and (max-width: 730px) {
+    /* phone */
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px min-content minmax(400px, auto) 20px;
+        grid-template-areas: 
+            "head"
+            "filt"
+            "ctlg"
+            "foot";
+    }
+
+
+    .filters {
+        border: 0;
+        background-color: #fff;
+    }
+    .slider {
+        display: none;
+    }
+    .filtersRb {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 40px;
+    }
+
+
+    .catalog {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    .item {
+        grid-template-rows: min-content;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "pic";
+    }
+    .item hr,
+    .item .itemDescr,
+    .item .itemName {
+        display: none;
+    }
+    .itemPic {
+        grid-area: pic;
+        width: 100%;
+    }
+
+
+    footer {
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+    }
+    footer .contacts {
+        flex-flow: column nowrap;
+    }
+}
